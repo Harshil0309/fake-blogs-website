@@ -1,11 +1,23 @@
-import { useState } from "react"
-
+import { useState , useRef, useEffect} from "react"
 import styling from "./App.module.css"
 
 function App() {
-  console.log("App", styling);
+
+  const inputRef = useRef(null);
+
+
+  const handleSubmit = () => {
+    if(inputRef == null) return;
+    console.log(inputRef.current.value);
+  }
+
+
+
   return (
-   <h1 className={styling.title}>HELLO</h1>
+    <div>
+      <input ref={inputRef}  />
+      <button onClick={() => handleSubmit()}>Submit</button>
+    </div>
   )
 }
 
