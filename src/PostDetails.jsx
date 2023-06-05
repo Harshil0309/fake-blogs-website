@@ -26,7 +26,7 @@ function PostDetails() {
         `https://jsonplaceholder.typicode.com/comments?postId=${params.postId}`
       );
       setComments(data.data);
-      console.log(data.data);
+      // console.log(data.data);
     };
     fetchComments();
   }, []);
@@ -56,7 +56,7 @@ function PostDetails() {
       <h3>Comments</h3>
       {comments.map((comment, index) => {
         return (
-          <div>
+          <div key={index+1}>
             <h5>
               {index + 1} {comment.body}
             </h5>
