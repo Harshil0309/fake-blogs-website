@@ -21,6 +21,11 @@ function PostDetails() {
   }, []);
 
   useEffect(() => {
+    if(details.title == null) return;
+    document.title = details.title;
+  }, [details]);
+
+  useEffect(() => {
     const fetchComments = async () => {
       const data = await axios.get(
         `https://jsonplaceholder.typicode.com/comments?postId=${params.postId}`
@@ -56,7 +61,7 @@ function PostDetails() {
       <h3>Comments</h3>
       {comments.map((comment, index) => {
         return (
-          <div key={index+1}>
+          <div key={index + 1}>
             <h5>
               {index + 1} {comment.body}
             </h5>

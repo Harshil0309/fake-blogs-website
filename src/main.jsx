@@ -9,12 +9,12 @@ import AllUsers from "./AllUsers";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
-  <Navbar/>
+    <Navbar />
     <Routes>
-      <Route path="/" element={<PostPage />} />
+      <Route path="/:pageNumber" element={<PostPage />} />
       <Route path="/user/:UserId" element={<UserPage />} />
       <Route path="/post/:postId" element={<PostDetails />} />
-      <Route path="/users/All" element={<AllUsers/>}/>
+      <Route path="/users/All" element={<AllUsers />} />
     </Routes>
   </BrowserRouter>
 );

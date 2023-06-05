@@ -20,15 +20,15 @@ function UserPage() {
         setError(error.message);
         console.log(error);
       }
-
       setLoading(false);
-
-      // console.log(userdata)
     };
     fetchuser();
   }, []);
 
-  // console.log(params);
+  useEffect(() => {
+    if (userData.name == null) return;
+    document.title = userData.name;
+  }, [userData]);
 
   return (
     <div>
