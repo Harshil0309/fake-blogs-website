@@ -59,12 +59,16 @@ function PostPage() {
       })}
       <div>
         <div>
-          <Link to={pageNumber == 1 ? "/1" : `/${Number(pageNumber) - 1}`}>
+          <Link
+            to={
+              pageNumber == 1 ? "/posts/1" : `/posts/${Number(pageNumber) - 1}`
+            }
+          >
             Prev
           </Link>
         </div>
         <div>
-          <Link to={`/${Number(pageNumber) + 1}`}>Next</Link>
+          <Link to={`/posts/${Number(pageNumber) + 1}`}>Next</Link>
         </div>
       </div>
     </div>
